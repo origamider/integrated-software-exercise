@@ -17,8 +17,9 @@ int main(){
     for(auto [key,val] : mp){
         data.push_back({val,key});
     }
-    sort(data.rbegin(),data.rend(),[&](pair<int,string> &data1,pair<int,string> &data2){
-        return data1.first < data2.first && data1.second < data2.second;
+    sort(data.begin(),data.end(),[&](pair<int,string> &data1,pair<int,string> &data2){
+        if(data1.first==data2.first) return data1.second < data2.second;
+        else return data1.second < data2.second;
     });
     // for(auto [ct,bread] : data){
     //     cout << ct << " " << bread << endl;
